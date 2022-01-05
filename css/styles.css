@@ -91,8 +91,6 @@ nav {
   letter-spacing: 0.03em;
   color: #000000;
   text-decoration: none;
-  transition-duration: var(--animation-duration);
-  transition-timing-function: var(--timing-function);
 }
 .accent-color {
   color: var(--accent-color);
@@ -120,6 +118,7 @@ nav {
   align-items: center;
   flex-direction: row-reverse;
   color: var(--primary-text-color);
+  transition-property: color;
   transition-duration: var(--animation-duration);
   transition-timing-function: var(--timing-function);
 }
@@ -132,6 +131,7 @@ nav {
 .site-nav-link {
   display: block;
   color: var(--title-text-color);
+  transition-property: color;
   transition-duration: var(--animation-duration);
   transition-timing-function: var(--timing-function);
 }
@@ -225,7 +225,7 @@ nav {
   text-transform: uppercase;
 }
 .hero-button {
-  width: 200px;
+  padding: 10px 32px;
   color: var(--primary-white-color);
   background: var(--accent-color);
   font-family: inherit;
@@ -236,8 +236,8 @@ nav {
   text-align: center;
   letter-spacing: 0.06em;
   cursor: pointer;
-  border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition-property: background-color;
   transition-duration: var(--animation-duration);
   transition-timing-function: var(--timing-function);
 }
@@ -327,20 +327,18 @@ nav {
 }
 
 .we-do-name {
+  display: flex;
+  justify-content: center;
+  height: 70px;
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 370px;
-  padding-top: 27px;
-  padding-bottom: 27px;
+  width: 100%;
   align-items: center;
   background: rgba(47, 48, 58, 0.8);
 }
 
 .we-do-what {
-  display: flex;
-  justify-content: center;
-  width: 100%;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -415,6 +413,7 @@ nav {
   border-radius: 50%;
   color: var(--icon);
   cursor: pointer;
+  transition-property: fill, background-color;
   transition-duration: var(--animation-duration);
   transition-timing-function: var(--timing-function);
 }
@@ -473,6 +472,7 @@ nav {
   align-items: center;
   justify-content: center;
   border-radius: 4px;
+  transition-property: border-color, fill;
   transition-duration: var(--animation-duration);
   transition-timing-function: var(--timing-function);
 }
@@ -507,6 +507,7 @@ nav {
   border-radius: 50%;
   color: var(--icon);
   cursor: pointer;
+  transition-property: fill, background-color;
   transition-duration: var(--animation-duration);
   transition-timing-function: var(--timing-function);
 }
@@ -526,8 +527,6 @@ nav {
   font-size: 26px;
   line-height: 1.19;
   letter-spacing: 0.03em;
-  transition-duration: var(--animation-duration);
-  transition-timing-function: var(--timing-function);
 }
 
 .footer {
@@ -540,6 +539,7 @@ nav {
 
 .footer-address {
   color: var(--primary-white-color);
+  transition-property: color;
   transition-duration: var(--animation-duration);
   transition-timing-function: var(--timing-function);
 }
@@ -547,6 +547,7 @@ nav {
 .footer-mail,
 .footer-tel {
   color: rgba(255, 255, 255, 0.6);
+  transition-property: color;
   transition-duration: var(--animation-duration);
   transition-timing-function: var(--timing-function);
 }
@@ -609,32 +610,34 @@ nav {
   background: rgba(0, 0, 0, 0.2);
   opacity: 1;
   visibility: visible;
-  transition: opacity 150ms var(--timing-function);
+  transition: opacity var(--animation-duration) var(--timing-function);
 }
 
 .backdrop.is-hidden {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  transform: translate(-50%, -50%) scale(0.8);
-}
-
-.backdrop.is-hidden .modal {
-  transform: scale(0.8);
+  transform: scale(0);
+  transition: transform, var(--animation-duration) var(--timing-function);
 }
 
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: scale(0.9) translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   min-height: 581px;
   min-width: 528px;
   background: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  transition: transform, 150ms var(--timing-function);
+  transition: transform, var(--animation-duration) var(--timing-function);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.9);
+  transition: transform, var(--animation-duration) var(--timing-function);
 }
 
 .close-modal {
@@ -648,6 +651,7 @@ nav {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50px;
   box-sizing: border-box;
+  transition: transform, var(--animation-duration) var(--timing-function);
 }
 
 .close-modal-icon {
@@ -655,6 +659,7 @@ nav {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: transform, var(--animation-duration) var(--timing-function);
 }
 
 /* ПОРТФОЛИО */
@@ -681,6 +686,7 @@ nav {
   background: var(--grey-background-color);
   color: var(--primary-white-color);
   background: var(--accent-color);
+  transition-property: color, background-color;
   transition-duration: var(--animation-duration);
   transition-timing-function: var(--timing-function);
 }
@@ -692,6 +698,7 @@ nav {
   background: var(--grey-background-color);
   color: var(--title-text-color);
   font-family: inherit;
+  transition-property: color, background-color;
   transition-duration: var(--animation-duration);
   transition-timing-function: var(--timing-function);
 }
@@ -800,6 +807,7 @@ nav {
 
 .project-link {
   display: block;
+  transition-property: color;
   transition-duration: var(--animation-duration);
   transition-timing-function: var(--timing-function);
 }
