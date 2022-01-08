@@ -567,7 +567,6 @@ nav {
 }
 
 .footer-networks-title {
-  font-family: Roboto;
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
@@ -789,8 +788,7 @@ nav {
   top: 0;
   left: 0;
   height: 100%;
-  transform: translateY(100%);
-  transition: transform var(--animation-duration) var(--timing-function);
+
   width: 100%;
   padding: 63px 24px;
   font-size: 18px;
@@ -798,11 +796,14 @@ nav {
   letter-spacing: 0.03em;
   color: var(--primary-white-color);
   background-color: rgba(33, 150, 243, 0.9);
+  transform: translateY(100%);
+  transition: transform var(--animation-duration) var(--timing-function);
 }
 
 .project-link:hover .thumb-info,
 .project-link:focus .thumb-info {
   transform: translateY(0);
+  transition: transform var(--animation-duration) var(--timing-function);
 }
 
 .project-link {
